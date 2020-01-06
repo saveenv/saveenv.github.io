@@ -1,146 +1,265 @@
-FusionCharts.ready(function() {
-    var stockPriceChart = new FusionCharts({
-        id: "stockRealTimeChart",
-        type: 'realtimeline',
-        renderAt: 'chart-container-1',
-        width: '700',
-        height: '400',
-        dataFormat: 'json',
-        dataSource: {
-          "chart": {
-            "caption": "Real-time stock price monitor",
-            "subCaption": "Harry's SuperMart",
-            "xAxisName": "Time",
-            "yAxisName": "Stock Price",
-            "numberPrefix": "$",
-            "refreshinterval": "5",
-            "yaxisminvalue": "35",
-            "yaxismaxvalue": "36",
-            "numdisplaysets": "10",
-            "labeldisplay": "rotate",
-            "showRealTimeValue": "0",
-            "theme": "fusion"
-          },
-          "categories": [{
-            "category": [{
-              "label": "Day Start"
-            }]
-          }],
-          "dataset": [{
-            "data": [{
-              "value": "35.27"
-            }]
-          }]
+const dataSource = {
+  chart: {
+    caption: "Energy Consumption Trends in primary schools",
+    yaxisname: "Electricity consumption in KWH",
+    subcaption: "(15/03/2017)",
+    showhovereffect: "1",
+    numbersuffix: "KWH",
+    drawcrossline: "1",
+    plottooltext: "<b>$dataValue</b> of youth were on $seriesName",
+    theme: "candy"
+  },
+  categories: [
+    {
+      category: [
+        {
+          label: "1:00"
         },
-        "events": {
-          "initialized": function(e) {
-            function addLeadingZero(num) {
-              return (num <= 9) ? ("0" + num) : num;
-            }
-  
-            function updateData() {
-              // Get reference to the chart using its ID
-              var chartRef = FusionCharts("stockRealTimeChart"),
-                // We need to create a querystring format incremental update, containing
-                // label in hh:mm:ss format
-                // and a value (random).
-                currDate = new Date(),
-                label = addLeadingZero(currDate.getHours()) + ":" +
-                addLeadingZero(currDate.getMinutes()) + ":" +
-                addLeadingZero(currDate.getSeconds()),
-                // Get random number between 35.25 & 35.75 - rounded to 2 decimal places
-                randomValue = Math.floor(Math.random() *
-                  50) / 100 + 35.25,
-                // Build Data String in format &label=...&value=...
-                strData = "&label=" + label +
-                "&value=" +
-                randomValue;
-              // Feed it to chart.
-              chartRef.feedData(strData);
-            }
-  
-            var myVar = setInterval(function() {
-              updateData();
-            }, 5000);
-          }
+        {
+          label: "3:00"
+        },
+        {
+          label: "5:00"
+        },
+        {
+          label: "7:00"
+        },
+        {
+          label: "9:00"
+        },
+        {
+          label: "11:00"
+        },
+        {
+          label: "13:00"
+        },
+        {
+          label: "15:00"
+        },
+        {
+          label: "17:00"
+        },
+        {
+          label: "19:00"
+        },
+        {
+          label: "21:00"
+        },
+        {
+          label: "23:00"
+        },
+        {
+          label: "24:00"
         }
-      })
-      .render();
-  });
-  
-  const dataSource = {
-    chart: {
-      caption: "Average Monthly Temperature in Texas",
-      yaxisname: "Average Monthly Temperature",
-      anchorradius: "5",
-      plottooltext: "Average temperature in $label is <b>$dataValue</b>",
-      showhovereffect: "1",
-      showvalues: "0",
-      numbersuffix: "°C",
-      theme: "candy",
-      anchorbgcolor: "#72D7B2",
-      palettecolors: "#72D7B2"
+      ]
+    }
+  ],
+  dataset: [
+    {
+      seriesname: " Ancrum Road Primary School(15/03/2017)",
+      data: [
+        {
+          value: "1"
+        },
+        {
+          value: "1"
+        },
+        {
+          value: "1.64"
+        },
+        {
+          value: "1.64"
+        },
+        {
+          value: "2.52"
+        },
+        {
+          value: "2.44"
+        },
+        {
+          value: "2.28"
+        },
+        {
+          value: "2.28"
+        },
+        {
+          value: "2.28"
+        },
+        {
+          value: "1.96"
+        },
+        {
+          value: "1.6"
+        },
+        {
+          value: "0.92"
+        },
+        {
+          value: "1.4"
+        },
+        {
+          value: "0.88"
+        }
+      ]
     },
-    data: [
-      {
-        label: "Jan",
-        value: "1"
-      },
-      {
-        label: "Feb",
-        value: "5"
-      },
-      {
-        label: "Mar",
-        value: "10"
-      },
-      {
-        label: "Apr",
-        value: "12"
-      },
-      {
-        label: "May",
-        value: "14"
-      },
-      {
-        label: "Jun",
-        value: "16"
-      },
-      {
-        label: "Jul",
-        value: "20"
-      },
-      {
-        label: "Aug",
-        value: "22"
-      },
-      {
-        label: "Sep",
-        value: "20"
-      },
-      {
-        label: "Oct",
-        value: "16"
-      },
-      {
-        label: "Nov",
-        value: "7"
-      },
-      {
-        label: "Dec",
-        value: "2"
-      }
-    ]
-  };
-  
-  FusionCharts.ready(function() {
-    var myChart = new FusionCharts({
-      type: "spline",
-      renderAt: "chart-container-2",
-      width: "700",
-      height: "400",
-      dataFormat: "json",
-      dataSource
-    }).render();
-  });
-  
+    {
+      seriesname: "Glebelands Primary School",
+      data: [
+        {
+          value: "1.325"
+        },
+        {
+          value: "1.303"
+        },
+        {
+          value: "1.286"
+        },
+        {
+          value: "2.201"
+        },
+        {
+          value: "4.4062"
+        },
+        {
+          value: "4.348"
+        },
+        {
+          value: "4.474"
+        },
+        {
+          value: "3.303"
+        },
+        {
+          value: "2.946"
+        },
+        {
+          value: "1.525"
+        },
+        {
+          value: "1.525"
+        },
+        {
+          value: "1.832"
+        },
+        {
+          value: "1.35"
+        },
+        {
+          value: "0.88"
+        }
+      ]
+    },
+    {
+      seriesname: "St Pius Primary School",
+      data: [
+        {
+          value: "0.482"
+        },
+        {
+          value: "0.43"
+        },
+        {
+          value: "0.424"
+        },
+        {
+          value: "0.431"
+        },
+        {
+          value: "1.051"
+        },
+        {
+          value: "1.017"
+        },
+        {
+          value: "0.886"
+        },
+        {
+          value: "0.664"
+        },
+        {
+          value: "0.376"
+        },
+        {
+          value: "0.316"
+        },
+        {
+          value: "0.419"
+        },
+        {
+          value: "0.652"
+        },
+        {
+          value: "0.519"
+        },
+        {
+          value: "0.652"
+        },
+        {
+          value: "0.424"
+        }
+      ]
+    },
+    {
+      seriesname: "Average consumption in ARPS",
+      data: [
+        {
+          value: "1.57"
+        },
+        {
+          value: "1.59"
+        },
+        {
+          value: "1.89"
+        },
+        {
+          value: "2.15"
+        },
+        {
+          value: "5.64"
+        },
+        {
+          value: "7.24"
+        },
+        {
+          value: "8.29"
+        },
+        {
+          value: "6.9"
+        },
+        {
+          value: "5.6"
+        },
+        {
+          value: "3.03"
+        },
+        {
+          value: "1.98"
+        },
+        {
+          value: "2.033"
+        },
+        {
+          value: "1.58"
+        },
+        {
+          value: "0.652"
+        },
+        {
+          value: "0.424"
+        }
+      ]
+    }
+  ]
+};
+
+FusionCharts.ready(function() {
+  var myChart = new FusionCharts({
+    type: "msline",
+    renderAt: "chart-container-1",
+    width: "100%",
+    height: "100%",
+    dataFormat: "json",
+    dataSource
+  }).render();
+});
+
