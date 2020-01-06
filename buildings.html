@@ -13,7 +13,8 @@
 		<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
 		<!-- Step 2 - Include the fusion theme -->
 		<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
-		<script type="text/javascript" src="src/index.js"></script>
+        <script type="text/javascript" src="src/index.js"></script>
+        
   </head>
   <body>
 		
@@ -32,17 +33,15 @@
 	          <li class="active">
 	            <a href="./index.html"><span class="fa fa-home mr-3"></span> Home</a>
 	          </li>
-	          <li>
-	              <a href="./index.html/#about"><span class="fa fa-user mr-3"></span> About</a>
-	          </li>
+	          
 	          <li>
               <a href="#buildings"><span class="fa fa-briefcase mr-3"></span> Buildings</a>
 	          </li>
 	          <li>
-              <a href="#"><span class="fa fa-sticky-note mr-3"></span> Blog</a>
-	          </li>
+                <a href="./index.html#about"><span class="fa fa-user mr-3"></span> About</a>
+             </li>
 	          <li>
-              <a href="./index.html/#help"><span class="fa fa-paper-plane mr-3"></span> Help</a>
+              <a href="./index.html#help"><span class="fa fa-paper-plane mr-3"></span> Help</a>
 	          </li>
 	        </ul>
 
@@ -52,8 +51,14 @@
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
-		<div id="chart-container">FusionCharts will render here</div>
-		<script src="./src/index.js"></script>    </div>
+        <ol class="components mb-5" >
+		<li>
+            <div id="chart-container-1">FusionCharts will render here</div>  
+        </li>
+        <li>
+            <div id="chart-container-2">FusionCharts will render here</div>  
+        </li>
+        </ol>
 		</div>
 
     <script src="js/jquery.min.js"></script>
