@@ -135,6 +135,8 @@ sup {
 
   .containerx {
     position: relative;
+    display: inline-block;
+    margin-right: 5vw;
     width: 25vw;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
