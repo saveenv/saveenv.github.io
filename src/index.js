@@ -56,7 +56,7 @@ const dataSource = {
   ],
   dataset: [
     {
-      seriesname: " Ancrum Road Primary School(15/03/2017)",
+      seriesname: " Ancrum Road Primary School",
       data: [
         {
           value: "1"
